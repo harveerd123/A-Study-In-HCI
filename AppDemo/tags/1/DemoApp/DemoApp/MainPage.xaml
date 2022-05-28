@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <!--Resources used to help create app:
+    https://www.tutorialspoint.com/csharp/index.htm
+    https://dotnet.microsoft.com/learn/xamarin/hello-world-tutorial/intro
+    -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoApp.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to my Demo App!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Button Text="Click here"
+                x:Name="button1" 
+                Clicked="button1_Clicked"/>
+
+        <Button Text="Another Button"
+                x:Name="button2"
+                Clicked="button2_Clicked"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center" />
+
+        <Button Text="Click for new page"
+                x:Name="button3"
+                Clicked="Button3_Clicked" />
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,145 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: black;
+}
+
+.navigationbar {
+	overflow: hidden;
+	background-color: black;
+}
+
+.navigationbar a {
+	float: left;
+	font-size: 27px;
+	color: yellow;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbutton {
+ 	font-size: 27px;  
+	color: yellow;
+	border: none;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.navigationbar a:hover, .dropdown:hover .dropbutton {
+	color: white;
+}
+
+.dropdowncontent {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdowncontent a {
+	float: none;
+	color: yellow;
+	padding: 12px 16px;
+	display: block;
+	text-align: left;
+}
+
+.dropdowncontent a:hover {
+	color: white;
+}
+
+.dropdown:hover .dropdowncontent {
+	display: block;
+}
+
+.navigationbarright {
+	float: right;
+
+}
+
+h1 {
+	color: red;
+	text-align: center;
+	font-size: 32px;
+}
+
+.card-body {
+	background-color: black;
+}
+
+.card-text {
+	color: yellow;
+	font-size: 23px;
+}
+
+.card-title {
+	color: yellow;
+	font-size: 27px;
+}
+
+.btn-primary {
+	background-color: #555;
+	color: yellow;
+	font-size: 20px;
+}
+.btn-primary:hover {
+	color: white;
+	background-color: #555;
+}
+
+.dropdown2 {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown2 .dropbutton {
+ 	font-size: 27px;  
+	color: yellow;
+	border: none;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.navigationbar a:hover, .dropdown2:hover .dropbutton {
+	color: white;
+}
+
+.dropdowncontent {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdowncontent a {
+	float: none;
+	color: yellow;
+	padding: 12px 16px;
+	display: block;
+	text-align: left;
+}
+
+.dropdowncontent a:hover {
+	color: white;
+}
+
+.dropdown2:hover .dropdowncontent {
+	display: block;
+}

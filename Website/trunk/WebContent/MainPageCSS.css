@@ -1,0 +1,139 @@
+@charset "ISO-8859-1";
+/* Links used that helped/inspired design:
+https://www.w3schools.com/css/css_navbar_horizontal.asp
+https://www.w3schools.com/css/css_dropdowns.asp
+https://www.w3schools.com/howto/howto_css_images_side_by_side.asp
+https://www.w3schools.com/cssref/pr_background-color.asp
+*/
+body {
+	background-color: black;
+}
+
+.navigationbar {
+	overflow: hidden;
+	background-color: black;
+}
+
+.navigationbar a {
+	float: left;
+	font-size: 27px;
+	color: yellow;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.dropdown2 {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown2 .dropbutton {
+ 	font-size: 27px;  
+	color: yellow;
+	border: none;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.navigationbar a:hover, .dropdown2:hover .dropbutton {
+	color: white;
+}
+
+.dropdowncontent {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdowncontent a {
+	float: none;
+	color: yellow;
+	padding: 12px 16px;
+	display: block;
+	text-align: left;
+}
+
+.dropdowncontent a:hover {
+	color: white;
+}
+
+.dropdown2:hover .dropdowncontent {
+	display: block;
+}
+
+.navigationbarright {
+	float: right;
+
+}
+
+h1 {
+	color: red;
+	text-align: center;
+}
+
+.container {
+	position: relative;
+	float:right;
+	width: 49.5%;
+	padding: 2px;
+}
+
+.container2 {
+	position: relative;
+	float:left;
+	width: 49.5%;
+	padding: 2px;
+}
+
+.container2 .btn2 {
+	position: absolute;
+	top: 30%;
+	left: 75%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	background-color: #555;
+	color: yellow;
+	font-size: 28px;
+	font-family: Arial;
+	padding: 24px 24px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	text-decoration: underline;
+}
+
+.container2 .btn2:hover {
+	background-color: black;
+	color: white;
+}
+
+.container .btn {
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	background-color: #555;
+	color: yellow;
+	font-size: 28px;
+	font-family: Arial;
+	padding: 24px 35px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.container .btn:hover {
+	background-color: black;
+	color: white;
+}

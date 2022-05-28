@@ -1,0 +1,47 @@
+@charset "ISO-8859-1";
+/* Links used that helped/inspired design:
+https://www.w3schools.com/html/default.asp
+https://www.w3schools.com/html/default.asp
+https://pixabay.com/vectors/store-online-ecommerce-shopping-4156934/ (picture used as background)
+*/
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Century Gothic;
+}
+
+header {
+	background-image: url(MainPageBackground.png);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+
+ul {
+	float: right;
+	list-style-type: none
+	
+}
+
+ul li {
+	display: inline-block;
+}
+
+ul li a {
+	text-decoration: underline;
+	color: #000000;
+	padding: 5px 20px;
+	border: 2px solid #000000;
+}
+
+ul li a:hover {
+	background-color: #fff;
+}
+
+.title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+

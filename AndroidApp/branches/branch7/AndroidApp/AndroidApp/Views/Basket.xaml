@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Following resources were used to design the page:
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/imagebutton
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/margin-and-padding
+    https://devblogs.microsoft.com/xamarin/embedded-fonts-xamarin-forms/
+    https://docs.microsoft.com/en-us/learn/modules/display-collections-in-xamarin-forms-apps-with-listview/
+    -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AndroidApp.Views.Basket"
+             xmlns:vm="clr-namespace:AndroidApp.ViewModels" >
+
+    <ContentPage.BindingContext>
+        <vm:BasketViewModel/>
+    </ContentPage.BindingContext>
+    <Grid Padding="10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Padding="0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Spacing="20" HorizontalOptions="Start" VerticalOptions="Start">
+                <Image Source="home.png" Aspect="AspectFit" WidthRequest="25" HeightRequest="25">
+                    <!--Home Icon Link: https://www.iconsdb.com/white-icons/home-5-icon.html-->
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                    <Label Text="BASKET" FontFamily="{StaticResource CustomFont}" TextColor="White" FontSize="35" HorizontalOptions="Center"/>
+                <ListView x:Name="BasketList"
+                    ItemsSource="{Binding ItemsList} "
+                    SelectedItem="{Binding SelectedItem}"
+                    HasUnevenRows="True"
+                    SeparatorVisibility="None">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="0,0,0,0" RowSpacing="10" ColumnSpacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="75"/>
+                                        <RowDefinition Height="75"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="75"/>
+                                        <ColumnDefinition Width="75"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image HeightRequest="35"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Aspect="AspectFill"
+                                    WidthRequest="40"
+                                    Grid.RowSpan="2"
+                                    Source="{Binding Image}"/>
+                                    <Label Grid.Column="1"
+                                    Text="{Binding Name}"
+                                    TextColor="White"
+                                    VerticalOptions="End"/>
+                                    <Label Grid.Column="1"
+                                    Grid.Row="1"
+                                    VerticalOptions="Start"
+                                    TextColor="White"
+                                    Text="{Binding price}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                <Button Text="Place Order" BackgroundColor="LightGreen" HorizontalOptions="CenterAndExpand"
+                        Clicked="Button_Clicked">
+                </Button>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

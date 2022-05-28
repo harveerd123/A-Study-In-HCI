@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AndroidApp.Views.Mains">
+
+    <Grid Padding="10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Padding="0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Spacing="20" HorizontalOptions="Start" VerticalOptions="Start">
+                <Image Source="home.png" Aspect="AspectFit" WidthRequest="25" HeightRequest="25">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Label Text="MAINS" FontFamily="{StaticResource CustomFont}" TextColor="White" FontSize="35" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+
+</ContentPage>

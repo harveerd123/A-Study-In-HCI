@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Clothes4You | Men's Clothing</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MensCSS.css">
+<!-- Used Bootstrap CSS for design and my own CSS to override things I wanted to change
+Link: https://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+</head>
+<body>
+
+<!-- Navigation bar and dropdown added using idea from w3schools
+Links: https://www.w3schools.com/css/css_navbar_horizontal.asp
+https://www.w3schools.com/css/css_dropdowns.asp -->
+<div class="navigationbar">
+	<a href="MainPage.html">Clothes4You</a>
+	<a href="About.html">About</a>
+	<a href="Contact.html">Contact</a>
+	
+	<div class="dropdown2">
+		<button class="dropbutton">Clothing
+		</button>
+		<div class="dropdowncontent">
+			<a href="Mens.html">Mens</a>
+			<a href="Womens.html">Womens</a>
+		</div>
+	</div>
+	
+	<div class="navigationbarright">
+		<a href="Basket.html"><img src="basket2.png" width=32px height=32px></a>
+	</div>
+	<!-- Basket image link:
+	https://www.iconsdb.com/yellow-icons/shopping-basket-icon.html
+  	-->
+</div>
+
+<h1>Men's Clothing</h1>
+
+<!-- Used code provided from Bootstrap for card components
+Links: https://getbootstrap.com/docs/4.5/components/card/-->
+<!-- Image Links:
+https://pixabay.com/photos/character-portrait-man-young-people-1468032/
+https://pixabay.com/photos/t-shirt-white-garment-rags-vacuum-1278404/
+https://pixabay.com/photos/fashion-man-beach-holiday-vacation-1283944/
+-->
+<div class="card-group">
+	<div class="card">
+		<img src="t-shirt.jpg" class="card-img-top" width=500; height=350;>
+		<div class="card-body">
+			<h5 class="card-title">White T-Shirt Size M</h5>
+			<p class="card-text">£9.99</p>
+			<a href="#" onclick="addToBasketButton()" class="btn btn-primary">Add to basket</a>
+		</div>
+	</div>
+	
+	<div class="card">
+		<img src="t-shirt2.jpg" class="card-img-top" width=500; height=350;>
+		<div class="card-body">
+			<h5 class="card-title">Patterned Polo Shirt Size M</h5>
+			<p class="card-text">£15.99</p>
+			<a href="#" onclick="addToBasketButton()" class="btn btn-primary">Add to basket</a>
+		</div>
+	</div>
+	
+	<div class="card">
+		<img src="jeans.jpg" class="card-img-top" width=500; height=350;>
+		<div class="card-body">
+			<h5 class="card-title">Blue Jeans Size L</h5>
+			<p class="card-text">£24.99</p>
+			<a href="#" onclick="addToBasketButton()" class="btn btn-primary">Add to basket</a>
+		</div>
+	</div>
+</div>
+
+<script>
+function addToBasketButton() {
+	alert("The item has been added to your basket");
+}
+</script>
+</body>
+</html>

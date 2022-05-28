@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Following resources were used to design the page:
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/imagebutton
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/margin-and-padding
+    https://devblogs.microsoft.com/xamarin/embedded-fonts-xamarin-forms/
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/populate-data
+    -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AndroidApp.Views.Mains"
+             xmlns:vm="clr-namespace:AndroidApp.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:MainsViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid Padding="10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Padding="0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Spacing="20" HorizontalOptions="Start" VerticalOptions="Start">
+                <Image Source="home.png" Aspect="AspectFit" WidthRequest="25" HeightRequest="25">
+                    <!--Home Icon Link: https://www.iconsdb.com/white-icons/home-5-icon.html-->
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Label Text="MAINS" FontFamily="{StaticResource CustomFont}" TextColor="White" FontSize="35" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Grid>
+        <CollectionView x:Name="MainsList" Grid.Row="1" ItemsSource="{Binding ItemsList}" SelectionMode="Single" 
+                        SelectedItem="{Binding SelectedItem}" VerticalScrollBarVisibility="Never">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" HorizontalItemSpacing="20" Span="2"/>
+            </CollectionView.ItemsLayout>
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10"  WidthRequest="150" HeightRequest="150">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Aspect="AspectFill" Source="{Binding Image}"  WidthRequest="150" HeightRequest="150" 
+                               HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Grid.Row="1" Text="{Binding Name}" TextColor="LightBlue" VerticalOptions="End" HorizontalOptions="Start"/>
+                        <Label Grid.Row="1" Text="{Binding price, StringFormat='£{0}'}" TextColor="LightBlue" VerticalOptions="End" HorizontalOptions="End"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

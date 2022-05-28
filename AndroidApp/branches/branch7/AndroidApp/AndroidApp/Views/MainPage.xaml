@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <!--Following resources were used to design the page:
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/imagebutton
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/margin-and-padding
+    https://devblogs.microsoft.com/xamarin/embedded-fonts-xamarin-forms/
+    -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AndroidApp.MainPage">
+
+    <Grid Padding="10" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Padding="0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Spacing="20" HorizontalOptions="End" VerticalOptions="Start">
+                <Image Source="basket.png" Aspect="AspectFit" WidthRequest="25" HeightRequest="25">
+                    <!--Basket Icon Link: https://iconsplace.com/white-icons/shopping-basket-icon-18/-->
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Label Text="FOOD STOP" FontFamily="{StaticResource CustomFont}" TextColor="White" FontSize="35" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <ImageButton Grid.Row="1" Source="starters.png" Aspect="Fill" HorizontalOptions="Center" VerticalOptions="Center"
+                     BackgroundColor="Transparent" Clicked="ImageButton_Clicked"/>
+            <ImageButton Grid.Row="2" Source="mains.png" Aspect="Fill" HorizontalOptions="Center" VerticalOptions="Center"
+                     BackgroundColor="Transparent" Clicked="ImageButton_Clicked_1"/>
+            <ImageButton Grid.Row="3" Source="drinks.png" Aspect="Fill" HorizontalOptions="Center" VerticalOptions="Center"
+                     BackgroundColor="Transparent" Clicked="ImageButton_Clicked_2"/>
+
+            <!--Images created on website: https://www.coolgenerator.com/png-text-generator-->
+        </Grid>
+    </Grid>
+</ContentPage>
